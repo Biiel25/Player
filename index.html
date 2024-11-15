@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <script src="script.js" defer></script>
+    <style>
+        /* Estilo para zerar margens e preenchimentos */
+        div,
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            vertical-align: baseline;
+            list-style: none;
+            border: 0;
+        }
+
+        /* Estilo geral para a página */
+        body,
+        html,
+        #canvas {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Estilo para imagens e vídeos */
+        img,
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Estilo para o botão e o seletor */
+        #startButton,
+        #monitorSelector {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Botão para iniciar a exibição das mídias -->
+    <button id="startButton" aria-label="Iniciar apresentação de mídia">Iniciar</button>
+
+    <!-- Seletor de monitores -->
+    <select id="monitorSelector" aria-label="Selecione o monitor" onchange="verificarMonitor()">
+        <option value="">Selecione o monitor</option>
+    </select>
+
+    <!-- Área onde as mídias serão exibidas -->
+    <div id="canvas"></div>
+</body>
+
+</html>
